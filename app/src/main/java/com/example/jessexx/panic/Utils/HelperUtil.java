@@ -7,7 +7,6 @@ import com.example.jessexx.panic.Models.Other;
 import com.example.jessexx.panic.Models.Vehicle;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by jessexx on 8/27/16.

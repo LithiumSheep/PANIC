@@ -6,7 +6,7 @@ package com.example.jessexx.panic.Models;
 public class Vehicle extends Asset {
 
     public enum CONDITION{
-        NEW, USED;
+        LIKE_NEW, SLIGHTLY_USED, USED, DAMAGED;
     }
     private int year;
 
@@ -14,7 +14,7 @@ public class Vehicle extends Asset {
 
     private CONDITION condition;
 
-    public Vehicle(String name, String description, int PictureId, float value, CATEGORY category, int year, String location, CONDITION
+    public Vehicle(String name, String description, int PictureId, double value, CATEGORY category, int year, String location, CONDITION
         condition) {
         super(name, description, PictureId, value, category);
         this.year = year;
@@ -22,13 +22,12 @@ public class Vehicle extends Asset {
         this.condition = condition;
     }
 
-    public Vehicle(String name, int PictureId, float value, CATEGORY category, int year, String location, CONDITION
+    public Vehicle(String name, int PictureId, double value, CATEGORY category, int year, String location, CONDITION
         condition) {
         super(name, PictureId, value, category);
         this.year = year;
         this.location = location;
         this.condition = condition;
-
     }
 
     public int getYear() {

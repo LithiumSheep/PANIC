@@ -15,14 +15,17 @@ public class User {
 
     private String password;
 
-    private ArrayList<Asset> assets = new ArrayList<Asset>();
+    private ArrayList<Asset> assets;
 
+    private ArrayList<String> banks;
 
-    public User(String username, String firstName, String lastName, String password) {
+    public User(String username, String firstName, String lastName, String password, ArrayList<Asset> assets, ArrayList<String> banks) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.assets = assets;
+        this.banks = banks;
     }
 
     public String getUsername() {
@@ -59,5 +62,13 @@ public class User {
                 assets.remove(i);
             }
         }
+    }
+
+    public ArrayList<String> getBanks() {
+        return banks;
+    }
+
+    public void setBanks(ArrayList<String> banks) {
+        this.banks = banks;
     }
 }

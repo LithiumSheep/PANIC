@@ -7,7 +7,7 @@ public class Home extends Asset {
 
     private String location;
 
-    public Home(String name, String description, int PictureId, float value, CATEGORY category, String location) {
+    public Home(String name, String description, int PictureId, double value, CATEGORY category, String location) {
         super(name, description, PictureId, value, category);
         this.location = location;
     }

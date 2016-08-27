@@ -5,7 +5,7 @@ package com.example.jessexx.panic.Models;
  */
 public class Other extends Asset {
 
-    public Other(String name, String description, int PictureId, float value, CATEGORY category) {
+    public Other(String name, String description, int PictureId, double value, CATEGORY category) {
         super(name, description, PictureId, value, category);
     }
 
