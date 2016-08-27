@@ -21,6 +21,7 @@ public class AppData {
     private static ArrayList<User> users;
 
     private AppData() {
+        users = new ArrayList<>();
         populateUsers();
     }
 
