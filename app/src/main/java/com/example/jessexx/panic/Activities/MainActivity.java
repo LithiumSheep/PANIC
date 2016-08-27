@@ -10,12 +10,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.jessexx.panic.R;
+import com.reimaginebanking.api.nessieandroidsdk.requestclients.NessieClient;
 
 
 /**
  * Add item Activity
  */
 public class MainActivity extends AppCompatActivity {
+
+    NessieClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        initialTasks();
+    }
+
+    private void initialTasks() {
+        client = NessieClient.getInstance("api_key");
+
     }
 
     @Override
