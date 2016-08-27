@@ -1,6 +1,7 @@
 package com.example.jessexx.panic.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,12 +48,14 @@ public class AssetDetailActivity extends AppCompatActivity {
 
         Button listingButton = (Button) findViewById(R.id.listings_button);
         if (name.contains("Bank")) {
-            listingButton.setVisibility(View.GONE);g
+            listingButton.setVisibility(View.GONE);
         }
         listingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, "Go to listings on this category", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, AssetListingActivity.class);
+                startActivity(intent);
             }
         });
     }

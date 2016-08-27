@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.jessexx.panic.Adapters.AssetAdapter;
+import com.example.jessexx.panic.Data.AppData;
 import com.example.jessexx.panic.R;
 import com.example.jessexx.panic.Utils.HelperUtil;
 import com.github.clans.fab.FloatingActionButton;
@@ -49,7 +50,9 @@ public class UserAssetActivity extends AppCompatActivity {
         mRecycler.setAdapter(mAdapter);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
 
-        AssetAdapter adapter = new AssetAdapter(this, HelperUtil.generateMockData());
+        AppData.getAppData();
+
+        AssetAdapter adapter = new AssetAdapter(this, AppData.getUsers().get(1).getAssets());
         mRecycler.setAdapter(adapter);
     }
 
