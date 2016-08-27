@@ -13,4 +13,7 @@
     <color name="orange">#FF5722</color>
     <color name="grey">#607D8B</color>
     <color name="text_grey">#9E9E9E</color>
+
+    <color name="panic_yellow">#FFA000</color>
+    <color name="panic_light_yellow">#FFEB3B</color>
 </resources>

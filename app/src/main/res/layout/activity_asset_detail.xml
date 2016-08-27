@@ -11,8 +11,9 @@
         android:scaleType="centerCrop"
         android:src="@drawable/login_banner_small"/>
 
-    <include layout="@layout/asset_detail_layout" />
+    <include layout="@layout/layout_asset_details" />
 
+    <include layout="@layout/layout_detail_buttons" />
 </LinearLayout>
 
 
