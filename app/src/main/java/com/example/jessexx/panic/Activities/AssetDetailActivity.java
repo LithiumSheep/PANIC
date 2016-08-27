@@ -54,8 +54,8 @@ public class AssetDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, "Go to listings on this category", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(mContext, AssetListingActivity.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(mContext, AssetListingActivity.class);
+                startActivity(intent);*/
             }
         });
     }

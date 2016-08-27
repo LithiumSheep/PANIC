@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.jessexx.panic.Data.AppData;
 import com.example.jessexx.panic.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -15,11 +16,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        AppData.getAppData();
 
         if (isUserLoggedIn()) {
             Intent intent = new Intent(this, UserAssetActivity.class);
             startActivity(intent);
-        }
+        }g
         setupButton();
     }
 
