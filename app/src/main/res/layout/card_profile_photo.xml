@@ -23,11 +23,12 @@
 
 
     <TextView
-        android:id="@+id/time_joined_textView"
+        android:id="@+id/panictext"
         android:gravity="center"
         android:layout_gravity="center"
-        android:text="some long text goes here ......text here"
+        android:text="Panic Mode"
         android:padding="5dp"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

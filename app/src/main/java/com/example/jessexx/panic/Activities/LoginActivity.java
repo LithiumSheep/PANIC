@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         if (isUserLoggedIn()) {
             Intent intent = new Intent(this, UserAssetActivity.class);
             startActivity(intent);
-        }g
+        }
         setupButton();
     }
 

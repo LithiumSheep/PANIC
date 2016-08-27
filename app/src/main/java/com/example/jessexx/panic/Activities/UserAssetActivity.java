@@ -2,7 +2,9 @@ package com.example.jessexx.panic.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,6 +31,7 @@ public class UserAssetActivity extends AppCompatActivity {
     Context mContext;
     RecyclerView mRecycler;
     AssetAdapter mAdapter;
+    boolean isPanic = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,14 +88,18 @@ public class UserAssetActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
 
-        if (id == R.id.action_panic) {
-            Toast.makeText(mContext, "PANIC MODE", Toast.LENGTH_SHORT).show();
+    public void swapMode(View v){
+
+        if (isPanic){
+            findViewById(R.id.appbar).setBackgroundColor(Color.parseColor("#FFC107"));
+            findViewById(R.id.toolbar).setBackgroundColor(Color.parseColor("#FFC107"));
+            findViewById(R.id.panictext).setVisibility(View.VISIBLE );
+        }else {
+            findViewById(R.id.appbar).setBackgroundColor(ContextCompat.getColor(this, R.color.app_primary));
+            findViewById(R.id.toolbar).setBackgroundColor(ContextCompat.getColor(this, R.color.app_primary));
+            findViewById(R.id.panictext).setVisibility(View.GONE );
         }
-
-        return super.onOptionsItemSelected(item);
+        isPanic = !isPanic;
     }
 }
