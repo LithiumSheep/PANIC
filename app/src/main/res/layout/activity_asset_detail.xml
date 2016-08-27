@@ -1,40 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/tools"
-    android:id="@+id/coordinator"
+<LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar_layout"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_banner_small"/>
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            app:theme="@style/AppTheme.ActionBar.Transparent"
-            android:minHeight="?attr/actionBarSize" />
-    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/asset_detail_layout" />
 
+</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="128dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/login_banner_small"/>
-
-        <include layout="@layout/asset_detail_layout" />
-
-    </LinearLayout>
-
-</android.support.design.widget.CoordinatorLayout>
 
 
