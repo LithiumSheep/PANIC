@@ -12,29 +12,16 @@ import android.view.MenuItem;
 import com.example.jessexx.panic.R;
 import com.reimaginebanking.api.nessieandroidsdk.requestclients.NessieClient;
 
-
-/**
- * Add item Activity
- */
-public class MainActivity extends AppCompatActivity {
+public class UserAssetActivity extends AppCompatActivity {
 
     NessieClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_user_assets);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         initialTasks();
     }
