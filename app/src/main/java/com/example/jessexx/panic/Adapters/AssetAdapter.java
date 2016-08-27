@@ -2,6 +2,7 @@ package com.example.jessexx.panic.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -79,8 +80,8 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, AssetDetailActivity.class);
                 mContext.startActivity(intent);
-
-
+g
+                Bundle extra = new Bundle();
             }
         });
     }
