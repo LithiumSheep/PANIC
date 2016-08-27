@@ -42,9 +42,12 @@ public class UserAssetActivity extends AppCompatActivity {
         //client = NessieClient.getInstance("7ec5f73cf2cb3f27c03642a4b277a951");
 
         mRecycler = (RecyclerView) findViewById(R.id.recycler);
-        mRecycler.setLayoutManager(new LinearLayoutManager(UserAssetActivity.this));
-        mAdapter = new AssetAdapter(mContext, HelperUtil.generateMockData());
+
         mRecycler.setAdapter(mAdapter);
+        mRecycler.setLayoutManager(new LinearLayoutManager(this));
+
+        AssetAdapter adapter = new AssetAdapter(this, HelperUtil.generateMockData());
+        mRecycler.setAdapter(adapter);
     }
 
     private void setupFAB() {
