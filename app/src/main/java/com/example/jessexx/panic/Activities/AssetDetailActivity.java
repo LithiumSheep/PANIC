@@ -13,6 +13,5 @@ public class AssetDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asset_detail);
 
-
     }
 }
