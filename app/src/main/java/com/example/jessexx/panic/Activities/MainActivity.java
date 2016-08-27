@@ -1,4 +1,4 @@
-package com.example.jessexx.panic;
+package com.example.jessexx.panic.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +9,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.jessexx.panic.R;
+
+
+/**
+ * Add item Activity
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
