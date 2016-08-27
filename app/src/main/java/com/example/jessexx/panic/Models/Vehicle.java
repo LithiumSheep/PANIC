@@ -1,5 +1,7 @@
 package com.example.jessexx.panic.Models;
 
+import java.util.ArrayList;
+
 /**
  * Created by mdt549 on 8/27/16.
  */
@@ -14,17 +16,18 @@ public class Vehicle extends Asset {
 
     private CONDITION condition;
 
-    public Vehicle(String name, String description, int PictureId, double value, CATEGORY category, int year, String location, CONDITION
-        condition) {
-        super(name, description, PictureId, value, category);
+    public Vehicle(String name, String description, int PictureId, double value, CATEGORY category, ArrayList<Listing> listings, int
+        year, String location, CONDITION condition) {
+        super(name, description, PictureId, value, category, listings);
         this.year = year;
         this.location = location;
         this.condition = condition;
     }
 
-    public Vehicle(String name, int PictureId, double value, CATEGORY category, int year, String location, CONDITION
+    public Vehicle(String name, int PictureId, double value, CATEGORY category, ArrayList<Listing> listings, int year, String location,
+        CONDITION
         condition) {
-        super(name, PictureId, value, category);
+        super(name, PictureId, value, category, listings);
         this.year = year;
         this.location = location;
         this.condition = condition;

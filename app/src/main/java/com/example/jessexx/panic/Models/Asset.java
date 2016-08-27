@@ -27,22 +27,19 @@ public class Asset {
 
     public Asset(){}
 
-    public Asset(String name, String description, int pictureID, double value, CATEGORY category) {
+    public Asset(String name, String description, int pictureID, double value, CATEGORY category, ArrayList<Listing> listings) {
+        this.id = UUID.randomUUID();
         this.name = name;
         this.description = description;
         this.pictureID = pictureID;
         this.value = value;
         this.category = category;
-        this.listings = new ArrayList<Listing>();
+        this.listings = listings;
     }
 
 
-    public Asset(String name, int pictureID, double value, CATEGORY category) {
-        this.id = UUID.randomUUID();
-        this.name = name;
-        this.pictureID = pictureID;
-        this.value = value;
-        this.category = category;
+    public Asset(String name, int pictureID, double value, CATEGORY category, ArrayList<Listing> listings) {
+        this(name, null, pictureID, value, category, listings);
     }
 
     public UUID getId(){
