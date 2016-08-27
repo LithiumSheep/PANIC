@@ -7,9 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jessexx.panic.Models.Asset;
 import com.example.jessexx.panic.R;
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
 import java.util.List;
 
@@ -31,7 +34,34 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolderItem vh = (ViewHolderItem) holder;
+        Asset asset = mList.get(position);
 
+        vh.tv_asset_value.setText("$" + asset.getValue());
+        vh.tv_asset_type.setText(asset.getName());
+
+        switch  (asset.getCategory()) {
+            case HOME:
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_home).actionBarSize());
+                break;
+            case VEHICLE:
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_car).actionBarSize());
+                break;
+            case BANK:
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_bank).actionBarSize());
+                break;
+            case OTHER:
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_gamepad).actionBarSize());
+                break;
+            default:
+                break;
+        }
+
+        vh.cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "Go to detail Screen", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
