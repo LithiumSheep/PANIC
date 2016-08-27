@@ -1,4 +1,4 @@
-package com.example.jessexx.panic.Interfaces;
+package com.example.jessexx.panic.Models;
 
 public class Asset {
 

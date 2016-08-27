@@ -1,7 +1,5 @@
 package com.example.jessexx.panic.Models;
 
-import com.example.jessexx.panic.Interfaces.Asset;
-
 /**
  * Created by mdt549 on 8/27/16.
  */
