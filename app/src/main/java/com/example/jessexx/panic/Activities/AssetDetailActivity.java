@@ -28,9 +28,19 @@ public class AssetDetailActivity extends AppCompatActivity {
         String name = bundle.getString("name");
         String description = bundle.getString("description");
 
+        int year = bundle.getInt("year", 0);
+        String location = bundle.getString("location", "No Location");
+        String condition = bundle.getString("condition", "No condition");
+
         TextView nameDetail = (TextView) findViewById(R.id.name_detail);
         nameDetail.setText(name);
         TextView descriptionDetail = (TextView) findViewById(R.id.description_detail);
         descriptionDetail.setText(description);
+        TextView yearDetail = (TextView) findViewById(R.id.year_detail);
+        yearDetail.setText(Integer.toString(year));
+        TextView locationDetail = (TextView) findViewById(R.id.location_detail);
+        locationDetail.setText(location);
+        TextView conditionDetail = (TextView) findViewById(R.id.condition_detail);
+        conditionDetail.setText(condition);
     }
 }

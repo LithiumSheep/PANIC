@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.jessexx.panic.Activities.AssetDetailActivity;
 import com.example.jessexx.panic.Models.Asset;
+import com.example.jessexx.panic.Models.Home;
+import com.example.jessexx.panic.Models.Vehicle;
 import com.example.jessexx.panic.R;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
@@ -83,6 +85,21 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 Bundle bundle = new Bundle();
                 bundle.putString("name", asset.getName());
                 bundle.putString("description", asset.getDescription());
+
+                switch (asset.getCategory()) {
+                    case HOME:
+                        Home mHome = (Home) asset;
+                        bundle.putString("location", mHome.getLocation());
+                        break;
+                    case VEHICLE:
+                        Vehicle mVehicle = (Vehicle) asset;
+                        bundle.putString("location", mVehicle.getLocation());
+                        bundle.putInt("year", mVehicle.getYear());
+                        //need CONDITION
+                        break;
+                    default:
+                        break;
+                }
 
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
