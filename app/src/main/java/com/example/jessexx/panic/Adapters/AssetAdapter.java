@@ -41,7 +41,7 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolderItem vh = (ViewHolderItem) holder;
-        Asset asset = mList.get(position);
+        final Asset asset = mList.get(position);
 
         vh.tv_asset_value.setText("$" + asset.getValue());
         vh.tv_asset_type.setText(asset.getName());
@@ -79,9 +79,13 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, AssetDetailActivity.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("name", asset.getName());
+                bundle.putString("description", asset.getDescription());
+
+                intent.putExtras(bundle);
                 mContext.startActivity(intent);
-g
-                Bundle extra = new Bundle();
             }
         });
     }
