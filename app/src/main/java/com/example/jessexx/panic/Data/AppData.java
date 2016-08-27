@@ -21,6 +21,7 @@ public class AppData {
     private static ArrayList<User> users;
 
     private AppData() {
+        populateUsers();
     }
 
     public static AppData getAppData() {
@@ -185,5 +186,8 @@ public class AppData {
         return new ArrayList<Asset>(Arrays.<Asset>asList(bank, home, car, bike, tv, laptop, dog));
     }
 
+    public static ArrayList<User> getUsers() {
+        return users;
+    }
 }
 
