@@ -133,16 +133,10 @@ public class AppData {
             new ArrayList<Listing>(
                 Arrays.asList(
                     new Listing(
-                        "http://washingtondc.craigslist.org/nva/bik/5750797624.html",
-                        1100.00, 19),
-                    new Listing("http://washingtondc.craigslist.org/nva/bik/5753656876.html",
-                        600.00, 20),
-                    new Listing(
-                        "http://washingtondc.craigslist.org/mld/bid/5730655590.html",
-                        2500, 21),
-                    new Listing(
-                        "http://washingtondc.craigslist.org/mld/bid/5746694296.html",
-                        1600, 22)
+                        "http://washingtondc.craigslist.org/nva/ele/5738829265.html",
+                        1600.00, 19),
+                    new Listing("http://washingtondc.craigslist.org/nva/ele/5709293724.html",
+                        1300.00, 20)
                 )
             ));
 
