@@ -17,13 +17,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         if (isUserLoggedIn()) {
-            // startActivity -> UserAssetActivity
+            Intent intent = new Intent(this, UserAssetActivity.class);
+            startActivity(intent);
         }
         setupButton();
     }
 
     public boolean isUserLoggedIn() {
-
         return false;
     }
 

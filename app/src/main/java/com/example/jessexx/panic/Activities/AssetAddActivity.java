@@ -3,7 +3,6 @@ package com.example.jessexx.panic.Activities;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.example.jessexx.panic.R;
@@ -18,7 +17,6 @@ public class AssetAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asset_add);
         mContext = this;
-
 
         setupView();
     }

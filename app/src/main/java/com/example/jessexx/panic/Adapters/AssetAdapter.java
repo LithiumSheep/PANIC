@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jessexx.panic.Activities.AssetDetailActivity;
 import com.example.jessexx.panic.Models.Asset;
@@ -48,16 +50,19 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_home)
                         .colorRes(R.color.purple)
                         .actionBarSize());
+                // set location on card
                 break;
             case VEHICLE:
                 vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_car)
                         .colorRes(R.color.cyan)
                         .actionBarSize());
+                // set make and model on card
                 break;
             case BANK:
                 vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_bank)
                         .colorRes(R.color.grey)
                         .actionBarSize());
+                // set institution name on card
                 break;
             case OTHER:
                 vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_gamepad)
@@ -65,6 +70,7 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                         .actionBarSize());
                 break;
             default:
+                Log.d("error", "something went wrong, the asset CATEGORY was unset");
                 break;
         }
 
@@ -73,6 +79,8 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, AssetDetailActivity.class);
                 mContext.startActivity(intent);
+
+
             }
         });
     }
