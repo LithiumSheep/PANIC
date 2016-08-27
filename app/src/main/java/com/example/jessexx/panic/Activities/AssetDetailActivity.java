@@ -5,7 +5,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jessexx.panic.R;
 
@@ -42,5 +44,16 @@ public class AssetDetailActivity extends AppCompatActivity {
         locationDetail.setText(location);
         TextView conditionDetail = (TextView) findViewById(R.id.condition_detail);
         conditionDetail.setText(condition);
+
+        Button listingButton = (Button) findViewById(R.id.listings_button);
+        if (name.contains("Bank")) {
+            listingButton.setVisibility(View.GONE);g
+        }
+        listingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "Go to listings on this category", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

@@ -27,4 +27,7 @@
         <item name="android:windowActionBar">false</item>
     </style>
 
+    <style name="LoginButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless.Colored">
+    </style>
+
 </resources>
