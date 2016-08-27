@@ -50,8 +50,6 @@ public class UserAssetActivity extends AppCompatActivity {
         mRecycler.setAdapter(mAdapter);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
 
-        AppData.getAppData();
-
         AssetAdapter adapter = new AssetAdapter(this, AppData.getUsers().get(1).getAssets());
         mRecycler.setAdapter(adapter);
     }
