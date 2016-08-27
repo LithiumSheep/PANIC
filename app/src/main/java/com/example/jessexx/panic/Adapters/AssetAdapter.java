@@ -2,6 +2,7 @@ package com.example.jessexx.panic.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,10 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jessexx.panic.Activities.AssetDetailActivity;
 import com.example.jessexx.panic.Models.Asset;
+import com.example.jessexx.panic.Models.Home;
+import com.example.jessexx.panic.Models.Vehicle;
 import com.example.jessexx.panic.R;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
@@ -40,7 +42,7 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolderItem vh = (ViewHolderItem) holder;
-        Asset asset = mList.get(position);
+        final Asset asset = mList.get(position);
 
         vh.tv_asset_value.setText("$" + asset.getValue());
         vh.tv_asset_type.setText(asset.getName());
@@ -78,9 +80,28 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, AssetDetailActivity.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("name", asset.getName());
+                bundle.putString("description", asset.getDescription());
+
+                switch (asset.getCategory()) {
+                    case HOME:
+                        Home mHome = (Home) asset;
+                        bundle.putString("location", mHome.getLocation());
+                        break;
+                    case VEHICLE:
+                        Vehicle mVehicle = (Vehicle) asset;
+                        bundle.putString("location", mVehicle.getLocation());
+                        bundle.putInt("year", mVehicle.getYear());
+                        //need CONDITION
+                        break;
+                    default:
+                        break;
+                }
+
+                intent.putExtras(bundle);
                 mContext.startActivity(intent);
-
-
             }
         });
     }

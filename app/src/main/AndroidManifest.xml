@@ -14,7 +14,7 @@
             android:name=".Activities.LoginActivity"
             android:label="Login"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.ActionBar.Transparent">
+            android:theme="@style/AppThemeTransparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +41,7 @@
             android:label="AssetDetailActivity"
             android:parentActivityName=".Activities.UserAssetActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoToolBar">
+            android:theme="@style/AppThemeTransparent">
         </activity>
 
     </application>

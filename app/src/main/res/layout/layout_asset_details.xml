@@ -7,6 +7,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
+        android:id="@+id/name_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
@@ -30,6 +31,7 @@
             android:text="Description"/>
 
         <TextView
+            android:id="@+id/description_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
@@ -44,6 +46,7 @@
             android:text="Year"/>
 
         <TextView
+            android:id="@+id/year_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
@@ -58,6 +61,7 @@
             android:text="Location"/>
 
         <TextView
+            android:id="@+id/location_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
@@ -72,6 +76,7 @@
             android:text="Condition"/>
 
         <TextView
+            android:id="@+id/condition_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"

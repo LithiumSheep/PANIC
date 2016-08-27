@@ -5,11 +5,17 @@ package com.example.jessexx.panic.Models;
  */
 public class Listing {
     private String url;
-    private float Value;
+    private double value;
+    private int iconId;
 
-    public Listing(String url, float value) {
+    public Listing(String url, double value, int iconId) {
         this.url = url;
-        Value = value;
+        this.value = value;
+        this.iconId = iconId;
+    }
+
+    public Listing(String url, int iconId){
+        this(url, 0.0, iconId);
     }
 
     public String getUrl() {
@@ -20,11 +26,19 @@ public class Listing {
         this.url = url;
     }
 
-    public float getValue() {
-        return Value;
+    public double getValue() {
+        return value;
     }
 
     public void setValue(float value) {
-        Value = value;
+        this.value = value;
+    }
+
+    public int getIconId() {
+        return iconId;
+    }
+
+    public void setIconId(int iconId) {
+        this.iconId = iconId;
     }
 }

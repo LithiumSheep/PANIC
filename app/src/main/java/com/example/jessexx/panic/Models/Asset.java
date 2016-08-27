@@ -16,7 +16,7 @@ public class Asset {
 
     private int pictureID;
 
-    private float value;
+    private double value;
 
     private boolean tangible;
 
@@ -27,22 +27,19 @@ public class Asset {
 
     public Asset(){}
 
-    public Asset(String name, String description, int pictureID, float value, CATEGORY category) {
+    public Asset(String name, String description, int pictureID, double value, CATEGORY category, ArrayList<Listing> listings) {
+        this.id = UUID.randomUUID();
         this.name = name;
         this.description = description;
         this.pictureID = pictureID;
         this.value = value;
         this.category = category;
-        this.listings = new ArrayList<Listing>();
+        this.listings = listings;
     }
 
 
-    public Asset(String name, int pictureID, float value, CATEGORY category) {
-        this.id = UUID.randomUUID();
-        this.name = name;
-        this.pictureID = pictureID;
-        this.value = value;
-        this.category = category;
+    public Asset(String name, int pictureID, double value, CATEGORY category, ArrayList<Listing> listings) {
+        this(name, null, pictureID, value, category, listings);
     }
 
     public UUID getId(){
@@ -73,7 +70,7 @@ public class Asset {
         this.pictureID = pictureID;
     }
 
-    public float getValue() {
+    public double getValue() {
         return value;
     }
 
