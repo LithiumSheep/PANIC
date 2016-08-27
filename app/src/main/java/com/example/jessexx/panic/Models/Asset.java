@@ -1,10 +1,14 @@
 package com.example.jessexx.panic.Models;
 
+import java.util.ArrayList;
+import java.util.UUID;
+
 public class Asset {
 
     public enum CATEGORY{
         HOME, VEHICLE, BANK, OTHER;
     }
+    private UUID id;
 
     private String name;
 
@@ -18,6 +22,8 @@ public class Asset {
 
     private CATEGORY category;
 
+    private ArrayList<Listing> listings;
+
 
     public Asset(){}
 
@@ -27,13 +33,20 @@ public class Asset {
         this.pictureID = pictureID;
         this.value = value;
         this.category = category;
+        this.listings = new ArrayList<Listing>();
     }
 
+
     public Asset(String name, int pictureID, float value, CATEGORY category) {
+        this.id = UUID.randomUUID();
         this.name = name;
         this.pictureID = pictureID;
         this.value = value;
         this.category = category;
+    }
+
+    public UUID getId(){
+        return id;
     }
 
     public String getName() {
@@ -82,5 +95,10 @@ public class Asset {
 
     public void setCategory(CATEGORY category) {
         this.category = category;
+    }
+
+
+    public ArrayList<Listing> getListings() {
+        return listings;
     }
 }
