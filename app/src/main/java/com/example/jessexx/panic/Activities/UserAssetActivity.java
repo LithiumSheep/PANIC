@@ -1,11 +1,15 @@
 package com.example.jessexx.panic.Activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.jessexx.panic.Adapters.AssetAdapter;
 import com.example.jessexx.panic.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.reimaginebanking.api.nessieandroidsdk.requestclients.NessieClient;
@@ -13,6 +17,9 @@ import com.reimaginebanking.api.nessieandroidsdk.requestclients.NessieClient;
 public class UserAssetActivity extends AppCompatActivity {
 
     NessieClient client;
+    Context mContext;
+    RecyclerView mRecycler;
+    AssetAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +27,17 @@ public class UserAssetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_assets);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mContext = this;
 
         setupFAB();
         initialTasks();
+    }
+
+    private void initialTasks() {
+        client = NessieClient.getInstance("7ec5f73cf2cb3f27c03642a4b277a951");
+
+        mRecycler = (RecyclerView) findViewById(R.id.recycler);
+
     }
 
     private void setupFAB() {
@@ -31,13 +46,10 @@ public class UserAssetActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "fab tapped", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, AssetAddActivity.class);
+                startActivity(intent);
             }
         });
-
-    }
-
-    private void initialTasks() {
-        client = NessieClient.getInstance("api_key");
 
     }
 }

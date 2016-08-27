@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public boolean isUserLoggedIn() {
+
         return false;
     }
 
