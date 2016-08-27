@@ -14,12 +14,16 @@ import java.util.List;
  */
 public class HelperUtil {
 
-    public static List<Asset> generateMockData() {
-        List<Asset> list = new ArrayList<>();
+    public static ArrayList<Asset> generateMockData() {
+        ArrayList<Asset> list = new ArrayList<>();
 
         list.add(new Bank("Bank", "Description", 0, 2000, Asset.CATEGORY.BANK));
-        list.add(new Home("Home", "Description", 0, 2000, Asset.CATEGORY.HOME));
-        list.add(new Vehicle("Car", "Description", 0, 2000, Asset.CATEGORY.VEHICLE));
+        list.add(new Home("Home", "Description", 0, 2000, Asset.CATEGORY.HOME, "Washington DC"));
+        list.add(new Vehicle("Car", "Description", 0, 2000, Asset.CATEGORY.VEHICLE, 1993, "DC", Vehicle.CONDITION.NEW));
+        list.add(new Other("Other", "Description", 0, 2000, Asset.CATEGORY.OTHER));
+        list.add(new Other("Other", "Description", 0, 2000, Asset.CATEGORY.OTHER));
+        list.add(new Other("Other", "Description", 0, 2000, Asset.CATEGORY.OTHER));
+        list.add(new Other("Other", "Description", 0, 2000, Asset.CATEGORY.OTHER));
         list.add(new Other("Other", "Description", 0, 2000, Asset.CATEGORY.OTHER));
         return list;
     }

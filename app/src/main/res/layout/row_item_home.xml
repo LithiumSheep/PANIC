@@ -7,8 +7,8 @@
     card_view:cardCornerRadius="0dp"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     android:layout_width="match_parent"
@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
                 android:textSize="22sp"
+                android:textColor="@color/text_grey"
                 android:text="category"/>
 
         </LinearLayout>
@@ -52,6 +53,7 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:src="@drawable/logo"/>
 
     </LinearLayout>

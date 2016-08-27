@@ -1,34 +1,38 @@
 package com.example.jessexx.panic.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.jessexx.panic.Activities.AssetDetailActivity;
 import com.example.jessexx.panic.Models.Asset;
 import com.example.jessexx.panic.R;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context mContext;
-    List<Asset> mList;
+    ArrayList<Asset> mList;
 
-    public AssetAdapter(Context context, List<Asset> list) {
+    public AssetAdapter(Context context, ArrayList<Asset> list) {
         mList = list;
         mContext = context;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_home, parent, false);
+        ViewHolderItem vh = new ViewHolderItem(v);
+        return vh;
     }
 
     @Override
@@ -41,16 +45,24 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         switch  (asset.getCategory()) {
             case HOME:
-                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_home).actionBarSize());
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_home)
+                        .colorRes(R.color.purple)
+                        .actionBarSize());
                 break;
             case VEHICLE:
-                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_car).actionBarSize());
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_car)
+                        .colorRes(R.color.cyan)
+                        .actionBarSize());
                 break;
             case BANK:
-                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_bank).actionBarSize());
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_bank)
+                        .colorRes(R.color.grey)
+                        .actionBarSize());
                 break;
             case OTHER:
-                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_gamepad).actionBarSize());
+                vh.iv_asset_icon.setImageDrawable(new IconDrawable(mContext, FontAwesomeIcons.fa_gamepad)
+                        .colorRes(R.color.orange)
+                        .actionBarSize());
                 break;
             default:
                 break;
@@ -59,7 +71,8 @@ public class AssetAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         vh.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "Go to detail Screen", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, AssetDetailActivity.class);
+                mContext.startActivity(intent);
             }
         });
     }
