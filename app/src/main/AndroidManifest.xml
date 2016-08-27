@@ -26,7 +26,7 @@
             android:name=".Activities.UserAssetActivity"
             android:label="UserAssetActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoToolBar">
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity

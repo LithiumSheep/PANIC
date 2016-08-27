@@ -29,13 +29,25 @@ public class UserAssetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_assets);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        mContext = this;
+        setContentView(R.layout.activity_user_assets2);
 
-        setupFAB();
+   //     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+//        setSupportActionBar(toolbar);
+        mContext = this;
+//
+//        setupFAB();
+       // initToolBar();
         initialTasks();
+    }
+
+    private void initToolBar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            toolbar.setTitle(R.string.looking_good);
+
+
+        }
     }
 
     private void initialTasks() {
@@ -49,6 +61,7 @@ public class UserAssetActivity extends AppCompatActivity {
 
     private void setupFAB() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        if (fab==null)return;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

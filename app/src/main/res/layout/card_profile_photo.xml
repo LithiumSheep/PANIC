@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:paddingBottom="30dp"
+    app:layout_collapseMode="parallax">
+
+    <TextView
+        android:id="@+id/text1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:text="@string/looking_good"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/mid_placeholder_view" />
+
+
+    <TextView
+        android:id="@+id/time_joined_textView"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="some long text goes here ......text here"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@id/mid_placeholder_view" />
+
+
+
+</LinearLayout>
