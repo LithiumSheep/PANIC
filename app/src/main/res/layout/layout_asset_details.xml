@@ -39,6 +39,7 @@
             android:text="Content goes here"/>
 
         <TextView
+            android:id="@+id/year_detail_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_grey"
@@ -54,6 +55,7 @@
             android:text="Content goes here"/>
 
         <TextView
+            android:id="@+id/location_detail_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_grey"
@@ -69,6 +71,7 @@
             android:text="Content goes here"/>
 
         <TextView
+            android:id="@+id/condition_detail_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_grey"
